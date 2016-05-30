@@ -1,0 +1,4 @@
+social_widgets.integrations:
+  route_name: social_widgets.integrations
+  title: Integrations
+  base_route: social_widgets.integrations

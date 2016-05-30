@@ -1,0 +1,7 @@
+name: Social API Widgets
+type: module
+description: Allows using different widgets from social networks
+core: 8.x
+package: Social
+dependencies:
+  - social_api

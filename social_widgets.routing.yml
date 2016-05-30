@@ -1,0 +1,7 @@
+social_widgets.integrations:
+  path: '/admin/config/social-api/social-widgets'
+  defaults:
+    _controller: '\Drupal\social_widgets\Controller\SocialWidgetsController::integrations'
+    _title: 'Widgets settings'
+  requirements:
+    _permission: 'administer social api widgets'

@@ -1,0 +1,6 @@
+social_widgets.settings:
+  title: Social widgets
+  description: Configure social widgets
+  route_name: social_widgets.integrations
+  parent: social_api.admin_config
+  weight: 20
