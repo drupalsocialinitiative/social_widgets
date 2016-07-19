@@ -1,8 +1,5 @@
 <?php
-/**
- * @file
- * Contains \Drupal\social_widgets\Controller\SocialWidgetsController
- */
+
 namespace Drupal\social_widgets\Controller;
 
 use Drupal\Core\Menu\LocalTaskManager;
@@ -11,13 +8,13 @@ use Drupal\social_api\Plugin\NetworkManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class SocialWidgetsController
- *
- * @package Drupal\social_widgets\Controller
+ * Renders the integration list.
  */
 class SocialWidgetsController extends SocialApiController {
 
   /**
+   * The network manager.
+   * 
    * @var NetworkManager
    */
   private $networkManager;
@@ -28,7 +25,7 @@ class SocialWidgetsController extends SocialApiController {
   private $localTaskManager;
 
   /**
-   * Constructs a SocialWidgetsController object
+   * Constructs a SocialWidgetsController object.
    *
    * @param NetworkManager $networkManager
    * @param LocalTaskManager $localTaskManager
@@ -50,7 +47,6 @@ class SocialWidgetsController extends SocialApiController {
     );
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -59,7 +55,7 @@ class SocialWidgetsController extends SocialApiController {
   }
 
   /**
-   * List widgets per social network
+   * List widgets per social network.
    *
    * @var string $parent_id
    *
@@ -75,7 +71,7 @@ class SocialWidgetsController extends SocialApiController {
     ];
     $data = [];
     foreach ($networks as $network) {
-      if($network['type'] == 'social_widgets' && $network['social_network'] == $social_network) {
+      if ($network['type'] == 'social_widgets' && $network['social_network'] == $social_network) {
         $data[] = [
           $network['id'],
           $network['social_network'],
@@ -89,4 +85,5 @@ class SocialWidgetsController extends SocialApiController {
       '#empty' => $this->t('There are no social integrations enabled.'),
     ];
   }
+
 }
