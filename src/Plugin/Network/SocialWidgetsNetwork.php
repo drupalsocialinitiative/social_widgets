@@ -7,7 +7,4 @@ use Drupal\social_api\Plugin\NetworkBase;
 /**
  * Defines a Network Plugin for Social Widgets.
  */
-class SocialWidgetsNetwork extends NetworkBase implements SocialWidgetsNetworkInterface {
-
-  protected function initSdk(){}
-}
+abstract class SocialWidgetsNetwork extends NetworkBase implements SocialWidgetsNetworkInterface {}
