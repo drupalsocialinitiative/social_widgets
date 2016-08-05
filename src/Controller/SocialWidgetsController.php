@@ -13,22 +13,26 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SocialWidgetsController extends SocialApiController {
 
   /**
-   * The network manager.
-   * 
+   * The network plugins manager.
+   *
    * @var NetworkManager
    */
-  private $networkManager;
+  protected $networkManager;
 
   /**
+   * The local task manager.
+   *
    * @var LocalTaskManager
    */
-  private $localTaskManager;
+  protected $localTaskManager;
 
   /**
    * Constructs a SocialWidgetsController object.
    *
    * @param NetworkManager $networkManager
+   *   The network plugins manager.
    * @param LocalTaskManager $localTaskManager
+   *   The local task manager.
    */
   public function __construct(NetworkManager $networkManager, LocalTaskManager $localTaskManager) {
     parent::__construct($networkManager);
@@ -55,13 +59,16 @@ class SocialWidgetsController extends SocialApiController {
   }
 
   /**
-   * List widgets per social network.
+   * Lists widgets for a social network.
    *
    * @var string $parent_id
+   *   The parent id which represents the social network.
    *
    * @return array
+   *   A render array for the list of modules for the social network.
    *
-   * @TODO this method should be removed after finding a better way of listing widgets for a social network
+   * @TODO this method should be removed after finding a better way of listing widgets for a social network.
+   * @see https://www.drupal.org/node/2737669
    */
   public function listWidgets($social_network) {
     $networks = $this->networkManager->getDefinitions();
